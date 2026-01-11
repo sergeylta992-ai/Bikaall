@@ -1,0 +1,16 @@
+@import './reset.scss';
+@import'./themes/dark.scss';
+@import './themes/normal.scss';
+@import './varible/global.scss';
+
+.app {
+  font:var(--font-m);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  background-color: ver(--bg-color);
+  height: 100vh;
+}
+
+td{
+  padding: 10px;
+}

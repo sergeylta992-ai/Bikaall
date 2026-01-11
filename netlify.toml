@@ -1,0 +1,26 @@
+
+[build]
+  command = "npm run build"  # Использует скрипт "build"
+  publish = "build"           # Измените на вашу папку сборки!
+  # Если используете webpack с другим output:
+  # publish = "build" или "dist" или "public"
+
+[build.environment]
+  NODE_VERSION = "18"        # Укажите версию Node.js
+  NPM_VERSION = "9"          # Укажите версию npm
+  CI = "false"               # Отключаем CI проверки
+
+# Для React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Для SPA (Single Page Application)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

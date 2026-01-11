@@ -1,0 +1,14 @@
+.form > input {
+  font-size: 35px;
+}
+
+.form > button {
+  font-size: 35px;
+}
+.form {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap:20px;
+}

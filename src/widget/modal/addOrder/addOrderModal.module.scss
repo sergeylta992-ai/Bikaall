@@ -1,0 +1,67 @@
+.none {
+  display: none;
+} 
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  top:0px;
+  z-index: 10;
+
+}
+
+.modal {
+  background-color: rgb(5, 84, 75);
+  width: 430px;
+  margin-top: 100px;
+  padding: 50px;
+  height: 100vh;
+ 
+}
+.number {
+  width: 130px;
+  height: 50px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+  color: #000;
+  font-family: 'Arial Black', 'Arial Bold', sans-serif;
+  font-size: 27px;
+  font-weight: 900;
+  //letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid #222;
+  border-radius: 7px;
+  text-transform: uppercase;
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.2),
+    inset 0 1px 2px rgba(255,255,255,0.8);
+  box-sizing: border-box;
+  padding: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.number::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.wrapNumber {
+  display: flex;
+  flex-wrap: wrap;
+}

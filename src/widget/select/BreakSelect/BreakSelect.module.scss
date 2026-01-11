@@ -1,0 +1,396 @@
+/* MobileMultiSelect.module.css */
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  background: #f8f9fa;
+ // min-height: 100vh;
+}
+
+.mainTitle {
+  text-align: center;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.selectWrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.selectTrigger {
+  width: 100%;
+  padding: 16px 52px 16px 16px;
+  background: white;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.selectTrigger:active {
+  transform: scale(0.98);
+}
+
+.selectTrigger.open {
+  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+}
+
+.triggerText {
+  flex: 1;
+  text-align: left;
+}
+
+.triggerIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  color: #666;
+}
+
+.triggerIcon.open {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.selectedCount {
+  position: absolute;
+  right: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007bff;
+  color: white;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
+.dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.dropdownHeader {
+  padding: 16px;
+  border-bottom: 1px solid #e1e5e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+.dropdownTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.closeButton:active {
+  background: #e9ecef;
+}
+
+.searchBox {
+  padding: 16px;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 16px;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.dropdownContent {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.categorySection {
+  margin-bottom: 8px;
+}
+
+.categoryHeader {
+  padding: 12px 16px;
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.optionItem {
+  padding: 16px;
+  border-bottom: 1px solid #f8f9fa;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.optionItem:active {
+  background-color: #e7f3ff;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.checkbox.checked {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+.checkbox.checked::after {
+  content: '✓';
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.optionText {
+  flex: 1;
+  font-size: 16px;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.selectedList {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.selectedListTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.selectedCountBadge {
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.selectedTags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.selectedTag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #e7f3ff;
+  border: 1px solid #b3d9ff;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tagContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tagCategory {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.tagName {
+  font-size: 14px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.removeTagButton {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.removeTagButton:active {
+  background: rgba(220, 53, 69, 0.1);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.emptyStateText {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid #e1e5e9;
+  background: white;
+}
+
+.actionButton {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:active {
+  transform: scale(0.98);
+}
+
+.primaryButton {
+  background: #007bff;
+  color: white;
+}
+
+.primaryButton:active {
+  background: #0056b3;
+}
+
+.secondaryButton {
+  background: #6c757d;
+  color: white;
+}
+
+.secondaryButton:active {
+  background: #545b62;
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 360px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .selectTrigger {
+    padding: 14px 48px 14px 14px;
+    font-size: 15px;
+  }
+  
+  .optionItem {
+    padding: 14px;
+  }
+}
