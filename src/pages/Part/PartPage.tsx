@@ -16,7 +16,7 @@ const PartPage = () => {
 //   name:String,
 //   prise:Number
 // }
-const [Loading,setLoading]= useState(true)
+//const [Loading,setLoading]= useState(true)
 const [parts,setParts] = useState([])
 const [part,setPart] = useState([])
 const [parthistory,setParthistory] = useState([])
