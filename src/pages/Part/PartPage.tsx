@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { collection, addDoc, getDocs, doc, setDoc,deleteDoc} from 'firebase/firestore';
 import { db } from '../../../config/FireBase/FireBase';
 import AddPartModal from '../../widget/modal/addPart/AddPartModal';
-import Loader from '../../components/loader/loader';
+//import Loader from '../../components/loader/loader';
 //import { timeOrder } from '../../shared/lib/timeOrder/timeStamp';
-import Set from '../../img/set.svg'
+import Set from '../../img/Set.svg'
 import Del from '../../img/del2.svg'
 import His from '../../img/ifeed.svg'
 import { Navbar } from '../../widget/NavBar';
@@ -95,7 +95,7 @@ const historyPart= async (part:any)=>{
   return (
     <>
     <Navbar/>
-       <Loader load={Loading}/>
+       {/* <Loader load={Loading}/> */}
       <AddPartModal 
       modal={modalAdd}
       close={AddModal}

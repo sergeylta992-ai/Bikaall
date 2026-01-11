@@ -1,4 +1,4 @@
-import cls from './BikePage.module.scss'
+import cls from './BIkePageApp.module.scss'
 import React, { useEffect, useState } from 'react';
 import { collection, addDoc, getDocs, doc, setDoc} from 'firebase/firestore';
 import { db } from '../../../config/FireBase/FireBase';
