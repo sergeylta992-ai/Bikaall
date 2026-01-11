@@ -29,7 +29,7 @@ useEffect( () =>{
 },[])
 
  const getPart = async () => {
-      setLoading(true)
+      //setLoading(true)
       try {
           console.log('🔄 Функция click запущена...');
           const querySnapshot = await getDocs(collection(db, 'parts'));
@@ -46,7 +46,7 @@ useEffect( () =>{
         } catch (error) {
           console.error('❌ Ошибка:', error);
         } finally {
-          setLoading(false)
+          //setLoading(false)
         }
     } 
 const AddModal = () => {
