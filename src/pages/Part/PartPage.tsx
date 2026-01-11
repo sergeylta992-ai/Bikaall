@@ -1,10 +1,10 @@
-import cls from './PartPage.module.scss'
+//import cls from './PartPage.module.scss'
 import { useEffect, useState } from 'react';
 import { collection, addDoc, getDocs, doc, setDoc,deleteDoc} from 'firebase/firestore';
 import { db } from '../../../config/FireBase/FireBase';
 import AddPartModal from '../../widget/modal/addPart/AddPartModal';
 import Loader from '../../components/loader/loader';
-import { timeOrder } from '../../shared/lib/timeOrder/timeStamp';
+//import { timeOrder } from '../../shared/lib/timeOrder/timeStamp';
 import Set from '../../img/set.svg'
 import Del from '../../img/del2.svg'
 import His from '../../img/ifeed.svg'

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useUsers } from '../../app/provider/UserPropvider/UserPropvider';
 import cls from './AppMasters.module.scss'
-import Loader from '../../components/loader/loader';
-import { collection, addDoc, getDocs, doc, setDoc,serverTimestamp,deleteDoc} from 'firebase/firestore';
+//import Loader from '../../components/loader/loader';
+import { collection,getDocs, doc, deleteDoc} from 'firebase/firestore';
 import { timeOrder } from '../../shared/lib/timeOrder/timeStamp';
 import { db } from '../../../config/FireBase/FireBase';
 import Del from '../../img/del2.svg'

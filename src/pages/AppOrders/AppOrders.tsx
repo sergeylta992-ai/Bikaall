@@ -4,10 +4,10 @@ import { collection, getDocs, doc,query,deleteDoc ,where } from 'firebase/firest
 import { db } from '../../../config/FireBase/FireBase';
 import Loader from '../../components/loader/loader';
 import AddOrderModal from "../../widget/modal/addOrder/addOrderModal"
-import Set from '../../img/set.svg'
+//import Set from '../../img/set.svg'
 import Del from '../../img/del2.svg'
 import { timeOrder } from '../../shared/lib/timeOrder/timeStamp';
-import { Navbar } from '../../widget/NavBar';
+//import { Navbar } from '../../widget/NavBar';
 import { useUsers } from '../../app/provider/UserPropvider/UserPropvider';
 
 const AppOrders = () => {
