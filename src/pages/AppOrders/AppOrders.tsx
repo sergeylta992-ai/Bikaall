@@ -2,7 +2,7 @@ import cls from './AppOrder.module.scss'
 import { useEffect, useState, Ref, useRef } from 'react';
 import { collection, getDocs, doc,query,deleteDoc ,where } from 'firebase/firestore';
 import { db } from '../../../config/FireBase/FireBase';
-import Loader from '../../components/loader/loader';
+//import Loader from '../../components/loader/Loader';
 import AddOrderModal from "../../widget/modal/addOrder/addOrderModal"
 //import Set from '../../img/set.svg'
 import Del from '../../img/del2.svg'
@@ -16,7 +16,7 @@ const AppOrders = () => {
 const { user, setUser } = useUsers()
 const [dark,setDark] = useState('')
 const [order,setOrder] = useState([])
-const [Loading,setLoading]= useState(false)
+//const [Loading,setLoading]= useState(false)
 const [bikes,setBikes] = useState([])
 const [OrderModal,setOrderModal] = useState(false)
 
@@ -39,7 +39,7 @@ const createOrder = () => {
    setOrderModal(prev=>!prev)
   };
 const getOrders = async () => {
-      setLoading(true)
+     // setLoading(true)
       setDark(user[0]?.dark)
 
 
@@ -64,18 +64,18 @@ const getOrders = async () => {
            } 
           })
           setOrder(data)
-          setLoading(false)
+        //  setLoading(false)
           console.log(data)
         } catch (error) {
           console.error('❌ Ошибка:', error);
         } finally {
-          setLoading(false)
+      //    setLoading(false)
         }
     } 
 
   return (
     <div>
-      <Loader load={Loading}/>
+  {/* <Loader load={Loading}/> */}
       <AddOrderModal
       modal={OrderModal}
       setModal={createOrder}
