@@ -13,13 +13,14 @@ interface SelectParts {
 }
 
 interface FilterCheckboxProps {
+  open:boolean;
   title: string;
   options: FilterOption[];
   selected: SelectParts[];
   onChange: (selected: SelectParts[]) => void;
 }
 
-const SelectParts = ({ title, options, selected, onChange }: FilterCheckboxProps) => {
+const SelectParts = ({ open, title, options, selected, onChange }: FilterCheckboxProps) => {
   
   // Получаем массив только ID для удобства проверки
   const selectedIds = selected.map(item => item.id);
@@ -70,7 +71,7 @@ const SelectParts = ({ title, options, selected, onChange }: FilterCheckboxProps
   };
 
   return (
-    <div className={styles.filterGroup}>
+    <div className={`${ open ? styles.filterGroup : styles.none }`}>
       <div className={styles.filterTitle}>
         <span>{title}</span>
         {selected.length > 0 && (

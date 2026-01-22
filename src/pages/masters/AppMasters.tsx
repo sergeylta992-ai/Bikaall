@@ -16,6 +16,7 @@ const AppMasters = () => {
   const [order,setOrder] = useState([])
   const [selectedParts, setSelectedParts] = useState([]);
   const [Parts, setParts] = useState([]);
+  const [selectOpen,setSelectOpeb]= useState(false)
 
 
 
@@ -105,7 +106,8 @@ const save = (bike:any)=> {
       <h1>Master Page</h1>
       <h2>{user[0]?.name}</h2>
       <SelectParts
-      title='заgчасти'
+      open={selectOpen}
+      title='запчасти'
       options={Parts}
       selected={selectedParts}
       onChange={setSelectedParts}
